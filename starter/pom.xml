@@ -103,16 +103,21 @@
     <!-- PowerMock -->
     <dependency>
       <groupId>org.powermock</groupId>
-      <artifactId>powermock-api-mockito</artifactId>
-      <version>1.6.5</version>
+      <artifactId>powermock-api-mockito2</artifactId>
+      <version>1.7.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.powermock</groupId>
       <artifactId>powermock-module-junit4</artifactId>
-      <version>1.6.5</version>
+      <version>1.7.0</version>
       <scope>test</scope>
     </dependency>
+  <dependency>
+    <groupId>javax.interceptor</groupId>
+    <artifactId>javax.interceptor-api</artifactId>
+    <version>1.2.1</version>
+  </dependency>
   </dependencies>
 
   <build>
