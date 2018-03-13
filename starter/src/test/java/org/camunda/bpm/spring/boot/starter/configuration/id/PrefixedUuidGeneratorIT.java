@@ -30,9 +30,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class PrefixedUuidGeneratorIT {
 
   @Autowired
-  SpringProcessEngineConfiguration springProcessEngineConfiguration;
-
-  @Autowired
   private IdGenerator idGenerator;
 
   @Autowired
@@ -41,27 +38,8 @@ public class PrefixedUuidGeneratorIT {
   @Autowired
   private ProcessEngine processEngine;
 
-  @BeforeClass
-  public static void init() {
-
-//    genericPropertiesConfiguration.preInit(processEngine);
-  }
-
   @Test
   public void property_is_set() throws Exception {
-    final int batchPollTimeValue = Integer.MAX_VALUE;
-    GenericProperties genericProperties = new GenericProperties();
-
-
-    genericProperties.getProperties().put("batch-poll-time", batchPollTimeValue);
-
-    properties.setGenericProperties(genericProperties);
-
-    Binder binder = Binder.get(springProcessEngineConfiguration.getEnvironment());
-    binder.bind("camunda-bpm-properties", CamundaBpmProperties.class);
-
-
-    assertEquals(Integer.MAX_VALUE, springProcessEngineConfiguration.getBatchPollTime());
     assertThat(properties.getIdGenerator()).isEqualTo(IdGeneratorConfiguration.PREFIXED);
   }
 
